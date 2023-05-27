@@ -5,6 +5,7 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import EmojiGallery from "@/components/emoji-gallery"
+import { Icons } from "@/components/icons"
 
 export default function IndexPage() {
   return (
@@ -22,20 +23,24 @@ export default function IndexPage() {
       </div>
       <div className="flex gap-4">
         <Link
-          href={siteConfig.links.docs}
           target="_blank"
           rel="noreferrer"
-          className={buttonVariants({ size: "lg" })}
+          href={siteConfig.links.icons}
+          className={buttonVariants({ variant: "outline", size: "lg" })}
         >
-          Documentation
+          Icons
+          <Icons.gitHub className="ml-2 h-5 w-5" />
+          <span className="sr-only">GitHub</span>
         </Link>
         <Link
           target="_blank"
           rel="noreferrer"
-          href={siteConfig.links.github}
+          href={siteConfig.links.website}
           className={buttonVariants({ variant: "outline", size: "lg" })}
         >
-          GitHub
+          Website
+          <Icons.gitHub className="ml-2 h-5 w-5" />
+          <span className="sr-only">GitHub</span>
         </Link>
       </div>
       <EmojiGallery />

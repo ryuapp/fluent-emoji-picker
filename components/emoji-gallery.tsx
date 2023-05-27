@@ -7,6 +7,9 @@ export default function EmojiGallery() {
   const emojiCardList: JSX.Element[] = []
 
   emojiList.forEach((emoji) => {
+    if (emoji.id >= 100) {
+      return false
+    }
     const folderName = emoji.path.replace("’", "")
     // folderName = folderName.replace(/:/g, "")
     const fileName = folderName.replace(/\s/g, "_").toLowerCase()
