@@ -3,6 +3,11 @@ export type SiteConfig = typeof siteConfig
 export const siteConfig = {
   name: "Fluent Emoji Picker",
   description: "Tool to easily copy Fluent Emoji in SVG format.",
+  copyright: {
+    author: "ryu.app",
+    link: "https://www.ryu.app/",
+    year: "2023"
+  },
   mainNav: [{}],
   links: {
     twitter: "",
