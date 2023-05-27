@@ -11,11 +11,11 @@ export function EmojiCard({
     <li className="list-none">
       <div
         id={"emoji-card-" + id}
-        className="h-16 w-16 text-center rounded border hover:bg-accent cursor-pointer"
+        className="h-16 w-16 cursor-pointer rounded border text-center hover:bg-accent"
       >
         <img
           id={"emoji-" + id}
-          className="mt-4 mx-auto transition ease-in-out select-none"
+          className="mx-auto mt-4 select-none transition ease-in-out"
           src={path}
           alt={name}
           width={32}

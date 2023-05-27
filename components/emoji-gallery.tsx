@@ -40,5 +40,5 @@ export default function EmojiGallery() {
     )
   })
 
-  return <ul className="flex gap-2 flex-wrap">{emojiCardList}</ul>
+  return <ul className="flex flex-wrap gap-2">{emojiCardList}</ul>
 }
