@@ -5,6 +5,7 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import EmojiGallery from "@/components/emoji-gallery"
+import { EmojiOptions } from "@/components/emoji-options"
 import { Icons } from "@/components/icons"
 
 export default function IndexPage() {
@@ -42,6 +43,9 @@ export default function IndexPage() {
           <Icons.gitHub className="ml-2 h-5 w-5" />
           <span className="sr-only">GitHub</span>
         </Link>
+      </div>
+      <div className="flex gap-4">
+        <EmojiOptions />
       </div>
       <EmojiGallery />
     </section>

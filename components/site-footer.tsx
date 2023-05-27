@@ -1,5 +1,6 @@
-import { siteConfig } from "@/config/site"
 import Link from "next/link"
+
+import { siteConfig } from "@/config/site"
 
 export function SiteFooter() {
   return (
@@ -8,7 +9,10 @@ export function SiteFooter() {
         Fluent Emoji are MIT-licensed.
       </div>
       <div className="mx-auto py-2 text-center text-xs">
-        © {siteConfig.copyright.year} <Link href={siteConfig.copyright.link}>{siteConfig.copyright.author}</Link>
+        © {siteConfig.copyright.year}{" "}
+        <Link href={siteConfig.copyright.link}>
+          {siteConfig.copyright.author}
+        </Link>
       </div>
     </footer>
   )

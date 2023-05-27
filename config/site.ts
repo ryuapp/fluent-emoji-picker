@@ -6,7 +6,7 @@ export const siteConfig = {
   copyright: {
     author: "ryu.app",
     link: "https://www.ryu.app/",
-    year: "2023"
+    year: "2023",
   },
   mainNav: [{}],
   links: {
