@@ -12,31 +12,24 @@ export default function EmojiGallery() {
     const fileName = folderName.replace(/\s/g, "_").toLowerCase()
     const imgPath = process.env.EMOJI_URL
     emojiCardList.push(
-      emoji.skintones ? (
-        <EmojiCard
-          key={emoji.id}
-          id={emoji.id}
-          name={emoji.name}
-          path={
-            imgPath +
-            folderName +
-            "/" +
-            "Default" +
-            "/Flat/" +
-            fileName +
-            "_flat_" +
-            "Default".toLowerCase() +
-            ".svg"
-          }
-        />
-      ) : (
-        <EmojiCard
-          key={emoji.id}
-          id={emoji.id}
-          name={emoji.name}
-          path={imgPath + folderName + "/Flat/" + fileName + "_flat.svg"}
-        />
-      )
+      <EmojiCard
+        key={emoji.id}
+        id={emoji.id}
+        name={emoji.name}
+        path={
+          emoji.skintones
+            ? imgPath +
+              folderName +
+              "/" +
+              "Default" +
+              "/Flat/" +
+              fileName +
+              "_flat_" +
+              "Default".toLowerCase() +
+              ".svg"
+            : imgPath + folderName + "/Flat/" + fileName + "_flat.svg"
+        }
+      />
     )
   })
 
