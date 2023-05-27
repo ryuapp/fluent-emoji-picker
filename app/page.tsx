@@ -1,4 +1,5 @@
-'use client'
+"use client"
+
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
@@ -9,9 +10,10 @@ export default function IndexPage() {
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl">
-        Fluent Emoji are a collection of <br className="hidden sm:inline" />
-        familiar, friendly, and modern emoji <br className="hidden sm:inline" />
-        from Microsoft. 
+          Fluent Emoji are a collection of <br className="hidden sm:inline" />
+          familiar, friendly, and modern emoji{" "}
+          <br className="hidden sm:inline" />
+          from Microsoft.
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
           You can easily copy Fluent Emoji in SVG format.
