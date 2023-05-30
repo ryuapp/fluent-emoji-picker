@@ -1,3 +1,5 @@
+import { useToast } from "@/components/ui/use-toast"
+
 export function EmojiCard({
   id,
   name,
@@ -7,11 +9,17 @@ export function EmojiCard({
   name: string
   path: string
 }) {
+  const { toast } = useToast()
   return (
     <li className="list-none">
       <div
         id={"emoji-card-" + id}
         className="h-16 w-16 cursor-pointer rounded border text-center hover:bg-accent"
+        onClick={() => {
+          toast({
+            title: name.toUpperCase() + " Copied!",
+          })
+        }}
       >
         <img
           id={"emoji-" + id}
