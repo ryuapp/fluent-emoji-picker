@@ -1,14 +1,13 @@
-import "@/styles/globals.css"
-import { Metadata } from "next"
+import "#styles/globals.css";
+import type { Metadata, Viewport } from "next";
 
-import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
-import { Toaster } from "@/components/ui/toaster"
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
+import { siteConfig } from "#config/site.ts";
+import { fontSans } from "#lib/fonts.ts";
+import { cn } from "#lib/utils.ts";
+import { ToastProvider } from "#components/ui/toaster.tsx";
+import { LoadingProvider } from "#components/loading-provider.tsx";
+import { SiteFooter } from "#components/site-footer.tsx";
+import { SiteHeader } from "#components/site-header.tsx";
 
 export const metadata: Metadata = {
   title: {
@@ -16,43 +15,47 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+};
+
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: dark)", color: "#020817" },
   ],
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
-}
+};
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}`,
+            }}
+          />
+        </head>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+            fontSans.variable,
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
-              <Toaster />
-              <SiteFooter />
-            </div>
-            <TailwindIndicator />
-          </ThemeProvider>
+          <LoadingProvider>
+            <ToastProvider>
+              <div className="relative flex min-h-screen flex-col">
+                <SiteHeader />
+                <main className="flex-1">{children}</main>
+                <SiteFooter />
+              </div>
+            </ToastProvider>
+          </LoadingProvider>
         </body>
       </html>
     </>
-  )
+  );
 }

@@ -1,19 +1,13 @@
-export type SiteConfig = typeof siteConfig
-
 export const siteConfig = {
   name: "Fluent Emoji Picker",
   description: "Tool to easily copy Fluent Emoji in SVG format.",
   copyright: {
     author: "ryu.app",
-    link: "https://www.ryu.app/",
-    year: "2023",
+    link: "https://ryu.app",
+    year: "2026",
   },
-  mainNav: [{}],
   links: {
-    twitter: "",
     icons: "https://github.com/microsoft/fluentui-emoji",
     website: "https://github.com/ryuapp/fluent-emoji-picker",
-    github: "https://github.com/ryuapp",
-    docs: "https://ui.shadcn.com",
   },
-}
+};

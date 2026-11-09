@@ -1,23 +1,24 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { useTheme } from "next-themes"
-
-import { Button } from "@/components/ui/button"
-import { Icons } from "@/components/icons"
+import Moon from "lucide-react/icons/moon";
+import Sun from "lucide-react/icons/sun";
+import { Button } from "#components/ui/button.tsx";
+import { toggleTheme, useTheme } from "#hooks/use-theme.ts";
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme()
-
+  const theme = useTheme();
+  const label = `Switch to ${theme === "dark" ? "light" : "dark"} mode`;
   return (
     <Button
+      type="button"
       variant="ghost"
       size="sm"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={toggleTheme}
+      aria-label={label}
+      title={label}
     >
-      <Icons.sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Icons.moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
+      <Sun className="theme-sun size-5" aria-hidden="true" />
+      <Moon className="theme-moon size-5" aria-hidden="true" />
     </Button>
-  )
+  );
 }

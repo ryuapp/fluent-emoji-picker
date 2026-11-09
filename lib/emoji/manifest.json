@@ -1,0 +1,56 @@
+{
+  "Smileys & Emotion": {
+    "src": "/emoji-previews/smileys-emotion.69b1bd3bd072.webp",
+    "width": 512,
+    "height": 352,
+    "columns": 16
+  },
+  "People & Body": {
+    "src": "/emoji-previews/people-body.09e331761df5.webp",
+    "width": 512,
+    "height": 704,
+    "columns": 16
+  },
+  "Animals & Nature": {
+    "src": "/emoji-previews/animals-nature.4e180efcb483.webp",
+    "width": 512,
+    "height": 320,
+    "columns": 16
+  },
+  "Food & Drink": {
+    "src": "/emoji-previews/food-drink.8ebf518ccaac.webp",
+    "width": 512,
+    "height": 288,
+    "columns": 16
+  },
+  "Travel & Places": {
+    "src": "/emoji-previews/travel-places.6fe280e18e3a.webp",
+    "width": 512,
+    "height": 448,
+    "columns": 16
+  },
+  "Activities": {
+    "src": "/emoji-previews/activities.6d90d7064860.webp",
+    "width": 512,
+    "height": 192,
+    "columns": 16
+  },
+  "Objects": {
+    "src": "/emoji-previews/objects.28ee5472edb6.webp",
+    "width": 512,
+    "height": 544,
+    "columns": 16
+  },
+  "Symbols": {
+    "src": "/emoji-previews/symbols.b5f5bf1fd2b8.webp",
+    "width": 512,
+    "height": 448,
+    "columns": 16
+  },
+  "Flags": {
+    "src": "/emoji-previews/flags.84e411547351.webp",
+    "width": 512,
+    "height": 32,
+    "columns": 16
+  }
+}

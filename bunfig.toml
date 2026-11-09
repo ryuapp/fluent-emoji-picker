@@ -1,0 +1,41 @@
+[install]
+exact = true
+
+[fmt]
+ignorePatterns = [
+  "bun.lock",
+  "lib/emoji/list.json",
+  "dist/**",
+  ".vinext/**",
+  ".next/**",
+  "next-env.d.ts",
+]
+
+[fmt.sortTailwindcss]
+stylesheet = "./styles/globals.css"
+functions = ["cn", "cva"]
+
+[lint]
+typeAware = true
+ignorePatterns = ["dist/**", ".vinext/**", ".next/**", "next-env.d.ts"]
+
+[lint.rules]
+"eqeqeq" = ["error", "always"]
+"curly" = ["error", "all"]
+"no-var" = "error"
+"prefer-const" = "error"
+"no-debugger" = "error"
+"no-duplicate-imports" = ["error", { allowSeparateTypeImports = true }]
+"array-callback-return" = "error"
+"@typescript-eslint/no-explicit-any" = "error"
+"@typescript-eslint/consistent-type-imports" = "error"
+"@typescript-eslint/no-non-null-assertion" = "error"
+"@typescript-eslint/switch-exhaustiveness-check" = "error"
+"react-hooks/rules-of-hooks" = "error"
+"react-hooks/exhaustive-deps" = "error"
+"react/jsx-no-target-blank" = "error"
+"jsx-a11y/alt-text" = "error"
+"jsx-a11y/anchor-has-content" = "error"
+"jsx-a11y/click-events-have-key-events" = "error"
+"jsx-a11y/no-static-element-interactions" = "error"
+"unicorn/prefer-node-protocol" = "error"
